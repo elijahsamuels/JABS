@@ -1,0 +1,8 @@
+
+require_relative "../lib/config/environment.rb"
+
+# Cli.new.welcome_page
+
+new_cli = Cli.new
+
+new_cli.welcome_page
