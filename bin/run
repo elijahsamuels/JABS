@@ -5,4 +5,4 @@ require_relative "../lib/config/environment.rb"
 
 new_cli = Cli.new
 
-new_cli.welcome_page
+new_cli.welcome_page_banner

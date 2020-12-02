@@ -1,58 +1,138 @@
-require_relative './API.rb' 
-require_relative './CLI.rb' 
 
 require 'pry'
 
 
 
-class Cli
-
-    
+class Cli 
 
     def user_input
-        print "Enter: "
+        puts "Enter: "
         gets.chomp
     end
 
     #------Welcome page
+    def welcome_page_banner
+";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;lkOOOOOko;;;;lkOOOOOOo:;;:dOOOOOOko;;;cxOOOOOOkkxdl:;:dOOOOko;;;;cxOOOOOOOOOOOOOOOxodOOOOkl;;;;;;;
+;:xNMMMMMWOc;;:kWMMMMMWk:;;oXWMMMMMWOc;;oXWMMMMMMMMWNKxlkWMMMWO:;;;dNMMMMMMMMMMMMMMWXx0WMMWXd;;;;;;;
+;;xNMMMMMWKl;;c0MMMMMMWk:;;xNMMMMMMWKl;;oXMMMMMMMMMMMMWKKWMMMWKl;;:kWMMMWWWMMMMMMMWWXx0MMMMNd;;;;;;;
+;;xNMMMMMMNd;;oXMMMMMMWk:;cOWMMMMMMMNd;;oXMMMMXOkKNWMMMMMMMMMMXd;;l0WMMMXKWMMMWKkxxxdo0MMMMNd;;;;;;;
+;;xNMMMMMMWO::xNMMMMMMWk:;lKMMMMMMMMWk:;oXMMMWKl;coONMMMMMMMMMWk:;oXMMMM0ONMMMWO:;;;;c0WMMMNd;;;;;;;
+;;xNMMMMMMMKlc0WMMMMMMWk:;dNMMMNXWMMMKl;oXMMMWKl;;;oKMMMMMMMMMW0c;xNMMMWkkNMMMWO:;;;;c0WMMMNd;;;;;;;
+;;xNMMMMMMMXddXMMMMMMMWk::kWMMMKONMMMXd;oXMMMMKl;;;oKMMMMMMMMMWKocOWMMMXdxNMMMWOc:::;c0MMMMNd;;;;;;;
+;;xNMMMMMMMWOOWMMMMMMMWk:l0WMMWOdKMMMNk:oXMMMWKl;coONMMMMXXWMMMNxoKMMMW0lxNMMMMNK000kd0MMMMNd;;;;;;;
+;;xNMMMMMMMWNNMMMMMMMMWk:dXMMMWxl0WMMW0coXMMMMXkxKNWMMMMNkxNMMMWOxNMMMNk:xNMMMMMMMMWXk0MMMMNd;;;;;;;
+;;xNMMMMWWMMMMMMWWMMMMWkckWMMMXd:kWMMMXooXMMMMMWMMMMMMWXx:lKWMMMKKWMMMXo;xNMMMMMWWWWKx0MMMMNd;;;;;;;
+;;xNMMMWXXMMMMMWXKWMMMWkl0WMMWKl;dNMMMWxdXMMMMMMMMMMMWKo:;:kWMMMWWMMMW0l;xNMMMWKxdddoo0WMMMNd;;;;;;;
+;;xNMMMW0OWMMMMWO0WMMMWkdXMMMWKdlxXMMMWOxXMMMMNKXWMMMMKl;;;dXMMMMMMMMWk:;xNMMMWO:;;;;c0MMMMNd;;;;;;;
+;;xNMMMWOxXWMMMNxOWMMMWOkNMMMMWNNWWMMMMKOXMMMWKooXWMMMNk:;;lKMMMMMMMMNd;:xNMMMWO:;;;;c0WMMWXd;;;;;;;
+;;xNMMMWOoOWMMMKokWMMMW00WMMMMMMMMMMMMMNKXMMMWKl:ONWMMMXo;;:kWMMMMMMW0l;;xNMMMWOc::::l0MMMMNx:::::;;
+;;xNMMMWOcxNMMWkckWMMMWXNMMMMN0kkkKWMMMWNWMMMWKl;oOXWMMWOc;;dNMMMMMMWk:;;xNMMMMNXKKKOd0MMMMWNKKK0o;;
+;;xNMMMWOcoXMMNd:kWMMMMWWMMMWOc;;;oKMMMMMMMMMWKl;:lkWMMMNd;;lKWMMMMMXd;;;xNMMMMMMMMMXk0MMMMMMMMMNx;;
+;;dXNNNNk:cONN0l:xXNWNNNNNNNXx;;;;cONNNNWWWNNN0l;;;o0NNNNOc;:kXNNNNN0l;;;dXNNNNNNNNNKxONNNNNNNNNXd;;
+;;clllllc;;cllc:;clloolloolol:;;;;;clloooooolll:;;;:clooll:;;clloollc;;;;:lloolllllllccllllllllll:;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+".each_char do |c|
+            sleep 0.001
+            print c
+        end
+        welcome_page
+    end
+
     def welcome_page
 
-        puts "Welcome"
-        puts " - - - - - - - - - - - - - - - "
-        puts "Please wait while JARVIS sends me all the info..."
-        puts " - - - - - - - - - - - - - - - "
+        puts ""
+        puts "------------------------------------------------"
+        puts "|                                              |"
+        puts "|            Welcome true believer!            |"
+        puts "|                                              |"
+        puts "------------------------------------------------"
+        puts ""
+        "Please wait while JARVIS uploads the info...".each_char do |c|
+            sleep 0.01
+            print c
+        end #with the full list of ~1400+, this could take about 30 seconds
+        Api.get_info
+        puts ""
         main_menu
     end
 
+    #------Main menu
 
     def main_menu
+        puts "-----------------------------------------------"
+        puts ""
         puts "Please select an option:"
-        puts " - - - - - - - - - - - - - - - "
+        puts ""
         puts "Enter '1' to list characters or 'exit' to bid farewell."
-        puts " - - - - - - - - - - - - - - - "
-        user_input
+        puts ""
+        input = user_input
 
-        if user_input == '1'
+        if input == '1'
             list_characters
-        elsif user_input == 'exit'
+        elsif input == 'exit'
             goodbye
-        elsif user_input != '1' || 'exit'
-            puts "Whoops. Let's try that again!"
+        elsif input != '1' || input != 'exit' # had to add "input !=" each time to avoid the string literal warning
+            puts "Whoops. Let's try that again!" # can I trigger an audio file? 
+            puts " ----------------------------------------------- "
             main_menu
         end
         
     end
-
+    
+    #------Character List with index numbers
 
     def list_characters
-            puts "Welcome true believer!"
-            puts "Please select a character:"
-            # all_character_data_list_of_names
+        puts "-----------------------------------------------"
+        puts ""
+        puts "Please select a character:"
+        Api.all_character_data_list_of_names
+        input = user_input
 
+        if input == '1'
+            # list_characters #need to work on this
+        elsif input == 'exit'
+            goodbye
+        elsif input != '1' || input != 'exit'
+            invalid_input
+            list_characters
+        end
+    
     end
 
+    #------Character Options
+
+    def list_characters_options
+        puts "-----------------------------------------------"
+        puts "Excellent choice!"
+        puts "What would you like to do next?"
+        puts "Enter '1' for a descritpion, '2' for an image or 'exit' to exit."
+        Api.all_character_data_list_of_names
+        input = user_input
+
+        if input == '1'
+            Api.list_characters_description #need to work on this
+        elsif input == '2'
+            Api.list_characters_image #need to work on this
+        elsif input == 'exit'
+            goodbye
+        elsif input != '1' || input != '2' || input != 'exit'
+            invalid_input
+            list_characters_options
+        end
+    end
+
+    #------Invalid User Input
+
+    def invalid_input
+        puts "Whoops. Let's try that again!"
+        puts "-----------------------------------------------"
+    end
+
+    #------Application end
+
     def goodbye
-            puts "And now, until we meet again, may the blessings of Asgard be showered upon you! - Stan Lee"
+        puts "And now, until we meet again, may the blessings of Asgard be showered upon you! - Stan Lee"
         exit
     end
 
