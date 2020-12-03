@@ -1,5 +1,6 @@
+#!/usr/bin/env ruby
 
-require_relative "../lib/config/environment.rb"
+require "./lib/config/environment.rb"
 
 # Cli.new.welcome_page
 

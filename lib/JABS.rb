@@ -1,9 +1,8 @@
+
+
+
 class JABS #Just Another Basic Search
 
-    require 'open-uri'
-    require 'net/http' 
-    require 'json' 
-    require 'pry' 
 
 
     public_key = '0fa4ca3776dca6adfe2287191e48f7c7'
