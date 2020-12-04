@@ -1,7 +1,4 @@
-
 source "https://rubygems.org"
-
-git_source(:github) {|name| "https://rubygems.org/#{name}"}
 
 gem 'open-uri', '~> 0.1.0'
 gem 'pry'

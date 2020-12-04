@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby
 
-require "./lib/config/environment.rb"
+require 'dotenv/load'
+Dotenv.load
 
-# Cli.new.welcome_page
+require "./lib/config/environment.rb"
 
 new_cli = Cli.new
 
 new_cli.welcome_page_banner
+

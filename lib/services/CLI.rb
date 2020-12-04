@@ -1,4 +1,3 @@
-
 class Cli 
 
     def user_input
@@ -7,30 +6,57 @@ class Cli
         gets.chomp
     end
 
+    def clear
+        Api.clear
+    end
+
     #------ Weclome Banner
     def welcome_page_banner
-";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;lkOOOOOko;;;;lkOOOOOOo:;;:dOOOOOOko;;;cxOOOOOOkkxdl:;:dOOOOko;;;;cxOOOOOOOOOOOOOOOxodOOOOkl;;;;;;;
-;:xNMMMMMWOc;;:kWMMMMMWk:;;oXWMMMMMWOc;;oXWMMMMMMMMWNKxlkWMMMWO:;;;dNMMMMMMMMMMMMMMWXx0WMMWXd;;;;;;;
-;;xNMMMMMWKl;;c0MMMMMMWk:;;xNMMMMMMWKl;;oXMMMMMMMMMMMMWKKWMMMWKl;;:kWMMMWWWMMMMMMMWWXx0MMMMNd;;;;;;;
-;;xNMMMMMMNd;;oXMMMMMMWk:;cOWMMMMMMMNd;;oXMMMMXOkKNWMMMMMMMMMMXd;;l0WMMMXKWMMMWKkxxxdo0MMMMNd;;;;;;;
-;;xNMMMMMMWO::xNMMMMMMWk:;lKMMMMMMMMWk:;oXMMMWKl;coONMMMMMMMMMWk:;oXMMMM0ONMMMWO:;;;;c0WMMMNd;;;;;;;
-;;xNMMMMMMMKlc0WMMMMMMWk:;dNMMMNXWMMMKl;oXMMMWKl;;;oKMMMMMMMMMW0c;xNMMMWkkNMMMWO:;;;;c0WMMMNd;;;;;;;
-;;xNMMMMMMMXddXMMMMMMMWk::kWMMMKONMMMXd;oXMMMMKl;;;oKMMMMMMMMMWKocOWMMMXdxNMMMWOc:::;c0MMMMNd;;;;;;;
-;;xNMMMMMMMWOOWMMMMMMMWk:l0WMMWOdKMMMNk:oXMMMWKl;coONMMMMXXWMMMNxoKMMMW0lxNMMMMNK000kd0MMMMNd;;;;;;;
-;;xNMMMMMMMWNNMMMMMMMMWk:dXMMMWxl0WMMW0coXMMMMXkxKNWMMMMNkxNMMMWOxNMMMNk:xNMMMMMMMMWXk0MMMMNd;;;;;;;
-;;xNMMMMWWMMMMMMWWMMMMWkckWMMMXd:kWMMMXooXMMMMMWMMMMMMWXx:lKWMMMKKWMMMXo;xNMMMMMWWWWKx0MMMMNd;;;;;;;
-;;xNMMMWXXMMMMMWXKWMMMWkl0WMMWKl;dNMMMWxdXMMMMMMMMMMMWKo:;:kWMMMWWMMMW0l;xNMMMWKxdddoo0WMMMNd;;;;;;;
-;;xNMMMW0OWMMMMWO0WMMMWkdXMMMWKdlxXMMMWOxXMMMMNKXWMMMMKl;;;dXMMMMMMMMWk:;xNMMMWO:;;;;c0MMMMNd;;;;;;;
-;;xNMMMWOxXWMMMNxOWMMMWOkNMMMMWNNWWMMMMKOXMMMWKooXWMMMNk:;;lKMMMMMMMMNd;:xNMMMWO:;;;;c0WMMWXd;;;;;;;
-;;xNMMMWOoOWMMMKokWMMMW00WMMMMMMMMMMMMMNKXMMMWKl:ONWMMMXo;;:kWMMMMMMW0l;;xNMMMWOc::::l0MMMMNx:::::;;
-;;xNMMMWOcxNMMWkckWMMMWXNMMMMN0kkkKWMMMWNWMMMWKl;oOXWMMWOc;;dNMMMMMMWk:;;xNMMMMNXKKKOd0MMMMWNKKK0o;;
-;;xNMMMWOcoXMMNd:kWMMMMWWMMMWOc;;;oKMMMMMMMMMWKl;:lkWMMMNd;;lKWMMMMMXd;;;xNMMMMMMMMMXk0MMMMMMMMMNx;;
-;;dXNNNNk:cONN0l:xXNWNNNNNNNXx;;;;cONNNNWWWNNN0l;;;o0NNNNOc;:kXNNNNN0l;;;dXNNNNNNNNNKxONNNNNNNNNXd;;
-;;clllllc;;cllc:;clloolloolol:;;;;;clloooooolll:;;;:clooll:;;clloollc;;;;:lloolllllllccllllllllll:;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        system "printf '\e[8;200;200t'"
+
+"
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;:clllllllllllllc:;;;;;;;;;;cllllllllllllllc;;;;;;;;:cllllllllllllllc:;;;;;;;;:lllllllllllllcc::;;;;;;;;;;;:cllllllllllc:;;;;;;;;;;:cllllllllllllllllllllllllllllllllc;:cllllllllllc:;;;;;;;;;;;;;;;
+;;;;;dKNNNNNNNNNNNNNKd;;;;;;;;;l0XNNNNNNNNNNNNXk:;;;;;;;o0XNNNNNNNNNNNNNKd;;;;;;;ckXNNNNNNNNNNNNXXK0OOxol:;;;;;lONNNNNNNNNNXd;;;;;;;;;:kXNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNXkcl0NNNNNNNNNXOl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMMMMWO:;;;;;;;;dNMMMMMMMMMMMMMWOc;;;;;;:xNMMMMMMMMMMMMMMWO:;;;;;;cOWMMMMMMMMMMMMMMMMMMMWX0xl:;;cOWMMMMMMMMMWOc;;;;;;;;lKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWOcoXMMMMMMMMMWKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMMMMMKl;;;;;;;:OWMMMMMMMMMMMMMWOc;;;;;;cOWMMMMMMMMMMMMMMMKl;;;;;;cOWMMMMMMMMMMMMMMMMMMMMMMWXOo::xWMMMMMMMMMMKl;;;;;;;;dXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWOcoXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMMMMMNd;;;;;;;lKWMMMMMMMMMMMMMWOc;;;;;;oXMMMMMMMMMMMMMMMMXd;;;;;;cOWMMMMMMMMMMMMMMMMMMMMMMMMMNOldXMMMMMMMMMMXd;;;;;;;:kWMMMMMMMMMWWWMMMMMMMMMMMMMMMMMMMMWOcoXMMMMMMMMMWKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMMMMMWk:;;;;;;dNMMMMMMMMMMMMMMWOc;;;;;;xNMMMMMMMMMMMMMMMMWk:;;;;;cOWMMMMMMMMMMMMMMMMMMMMMMMMMMWKOXMMMMMMMMMMNx:;;;;;;c0WMMMMMMMMMNXNMMMMMMMMMMMMMMMMMMMMWOcoXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMMMMMW0l;;;;;:kWMMMMMMMMMMMMMMWOc;;;;;:OWMMMMMMMMMMMMMMMMW0l;;;;;cOWMMMMMMMMMMNNNWMMMMMMMMMMMMMMWWMMMMMMMMMMWOc;;;;;;oKMMMMMMMMMWK0NMMMMMMMMMMWNNNNNNNNNXkcoXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMMMMMMXd;;;;;lKWMMMMMMMMMMMMMMWOc;;;;;lKMMMMMMMMMMMMMMMMMMXd;;;;;cOWMMMMMMMMMWklldkXNWMMMMMMMMMMMMMMMMMMMMMMMKo;;;;;;dNMMMMMMMMMWOkNMMMMMMMMMWKdlllllllllc;oXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMMMMMMWk:;;;;dXMMMMMMMMMMMMMMMWOc;;;;;dXMMMMMMMMMMMMMMMMMMWk:;;;;cOWMMMMMMMMMNx;;;;cokNMMMMMMMMMMMMMMMMMMMMMMNd;;;;;:kWMMMMMMMMMNdxNMMMMMMMMMW0c;;;;;;;;;;;oXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMMMMMMW0c;;;:kWMMMMMMMMMMMMMMMWOc;;;;:kWMMMMMMMMMMMMMMMMMMW0c;;;;cOWMMMMMMMMMNx;;;;;;:xNMMMMMMMMMMMMMMMMMMMMMWk:;;;;l0WMMMMMMMMMKldNMMMMMMMMMM0c;;;;;;;;;;;oXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMMMMMMMXo;;;l0WMMMMMMMMMMMMMMMWOc;;;;l0WMMMMMMMMNXWMMMMMMMMXo;;;;cOWMMMMMMMMMNx;;;;;;;c0WMMMMMMMMMMMMMMMMMMMMM0c;;;;oXMMMMMMMMMWOcdNMMMMMMMMMM0c;;;;;;;;;;;oXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMMMMMMMNx:;;dXMMMMMMMMMMMMMMMMWOc;;;;dXMMMMMMMMW0ONMMMMMMMMNx;;;;cOWMMMMMMMMMNx:;;;;;;:kWMMMMMMMMMMMMMMMMMMMMMXo;;;:xWMMMMMMMMMNx:dNMMMMMMMMMM0c;;;;;;;;;;;oXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMMMMMMMW0c;:kNMMMMMMMMMMMMMMMMWOc;;;:kWMMMMMMMMNkdXMMMMMMMMWOc;;;cOWMMMMMMMMMNx:;;;;;;:xWMMMMMMMMMMMMMMMMMMMMMNx;;;cOWMMMMMMMMWKo;dNMMMMMMMMMM0c;;;;;;;;;;;oXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMMMMMMMMXo;c0WMMMMMMMMMMMMMMMMWOc;;;c0WMMMMMMMMXdlKWMMMMMMMWKl;;;cOWMMMMMMMMMNx;;;;;;;:OWMMMMMMMMMMWWMMMMMMMMMWOc;;lKMMMMMMMMMWOc;dNMMMMMMMMMM0c;;;;;;;;;;;oXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMMMMMMMMNx:oXMMMMMMMMMMMMMMMMMWOc;;;oKMMMMMMMMMKlcOWMMMMMMMMNd;;;cOWMMMMMMMMMNx;;;;;;;oXMMMMMMMMMMWXNMMMMMMMMMWKl;;dXMMMMMMMMMNx:;dNMMMMMMMMMMXxdddddddddl:oXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMMMMMMMMWOlkWMMMMMMMMMMMMMMMMMWOc;;;xNMMMMMMMMW0c;xNMMMMMMMMWk:;;cOWMMMMMMMMMNx;;;;;:l0WMMMMMMMMMMNO0WMMMMMMMMMXd;:kNMMMMMMMMMKo;;dNMMMMMMMMMMMMMWWWWWWWWOcoXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMMMMMMMMMKx0MMMMMMMMMMMMMMMMMMWOc;;cOWMMMMMMMMWk:;dXMMMMMMMMM0l;;cOWMMMMMMMMMNx:;;cxOKWMMMMMMMMMMWKodNMMMMMMMMMWk:c0WMMMMMMMMWOc;;dNMMMMMMMMMMMMMMMMMMMMWOcoXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMMMMMMMMMNKNMMMMMMMMMMMMMMMMMMWOc;;lKWMMMMMMMMNx;;lKMMMMMMMMMXd;;cOWMMMMMMMMMW0dxOXWMMMMMMMMMMMMMXd;lKWMMMMMMMMW0coXMMMMMMMMMNx:;;dNMMMMMMMMMMMMMMMMMMMMWOcoXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMWWMMMMMMMWMMMMMMMWWMMMMMMMMMMWOc;;dNMMMMMMMMMXo;;cOWMMMMMMMMNx:;cOWMMMMMMMMMMWWMMMMMMMMMMMMMMMWXx:;:kWMMMMMMMMMKoxNMMMMMMMMMXo;;;dNMMMMMMMMMMMMMMMMMMMMWOcoXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMNXWMMMMMMMMMMMMMMNXWMMMMMMMMMWOc;:kWMMMMMMMMW0c;;:kWMMMMMMMMW0c;cOWMMMMMMMMMMMMMMMMMMMMMMMMMMWKd:;;;dNMMMMMMMMMNkOWMMMMMMMMW0c;;;dNMMMMMMMMMMMMMMMMMMMMWOcoXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMMK0NMMMMMMMMMMMMMW00WMMMMMMMMMWOc;l0WMMMMMMMMWk:;;;dNMMMMMMMMMXo;cOWMMMMMMMMMMMMMMMMMMMMMMMMWXkc;;;;;lKMMMMMMMMMWKXMMMMMMMMMNx:;;;dNMMMMMMMMMMNKKKKKKKKK0x:oXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMM0xKMMMMMMMMMMMMMNkOWMMMMMMMMMWOc;oXMMMMMMMMMNx:;;;lKMMMMMMMMMNx;cOWMMMMMMMMMMMMMMMMMMMMMMMW0o;;;;;;;:kWMMMMMMMMMWWMMMMMMMMMXo;;;;dNMMMMMMMMMM0l:::::::::;;oXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMM0oOWMMMMMMMMMMMMKdOWMMMMMMMMMWOc:xNMMMMMMMMMXo;;;;cOWMMMMMMMMWOcc0WMMMMMMMMMMMMMMMMMMMMMMMWKl;;;;;;;;dNMMMMMMMMMMMMMMMMMMMW0c;;;;dNMMMMMMMMMM0c;;;;;;;;;;;oXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMM0lxNMMMMMMMMMMMWOlkWMMMMMMMMMWO:c0WMMMMMMMMWKdcccccOWMMMMMMMMMKlc0WMMMMMMMMMWKOkKWMMMMMMMMMNk:;;;;;;;lKWMMMMMMMMMMMMMMMMMMWk:;;;;dNMMMMMMMMMM0c;;;;;;;;;;;oXMMMMMMMMMMKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMM0llKWMMMMMMMMMMNdckWMMMMMMMMMWOcoXMMMMMMMMMMWXXXXXXNMMMMMMMMMMNdcOWMMMMMMMMMNx:;dXMMMMMMMMMMXo;;;;;;;:kWMMMMMMMMMMMMMMMMMMXd;;;;;dNMMMMMMMMMM0c;;;;;;;;;;;oXMMMMMMMMMWKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMM0c:OWMMMMMMMMMMKl:OWMMMMMMMMMWOcxNMMMMMMMMMMMMMMMMMMMMMMMMMMMMWklOWMMMMMMMMMNx;;cOWMMMMMMMMMWOc;;;;;;;dXMMMMMMMMMMMMMMMMMW0l;;;;;dNMMMMMMMMMM0c;;;;;;;;;;;oXMMMMMMMMMWKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMM0c;dNMMMMMMMMMWO::kWMMMMMMMMMWOlOWMMMMMMMMMMMMMMMMMMMMMMMMMMMMW0dOWMMMMMMMMMNx:;;oXWMMMMMMMMMNd;;;;;;;lKMMMMMMMMMMMMMMMMMWk:;;;;;dNMMMMMMMMMW0c;;;;;;;;;;;oXMMMMMMMMMWKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMM0c;lKMMMMMMMMMNd;:kWMMMMMMMMMWOdKMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXk0WMMMMMMMMMNx;;;:ONWMMMMMMMMW0l;;;;;;:kWMMMMMMMMMMMMMMMMXd;;;;;;dNMMMMMMMMMW0c;;;;;;;;;;;oXMMMMMMMMMWKl;;;;;;;;;;;;;;;
+;;;;;xNMMMMMMMMMM0l;:OWMMMMMMMMKl;:kWMMMMMMMMMWOkNMMMMMMMMMMMMWWWMMMMMMMMMMMMMMMW0KWMMMMMMMMMNx;;;;oOXWMMMMMMMMNk:;;;;;;dNMMMMMMMMMMMMMMMWKl;;;;;;dNMMMMMMMMMMXOxxxxxxxxxo:oXWMMMMMMMMMNOxxkxxxxxxl;;;;;
+;;;;;xNMMMMMMMMMM0l;;dNMMMMMMMWO:;:kWMMMMMMMMMWK0WMMMMMMMMMW0xxxxxxxxONMMMMMMMMMMXXWMMMMMMMMMNx;;;;:lkWMMMMMMMMMKo;;;;;;lKWMMMMMMMMMMMMMMWk:;;;;;;dNMMMMMMMMMMMMMMMMMMMMWOcoXWMMMMMMMMMMMMMMMMMMMNx;;;;;
+;;;;;xNMMMMMMMMMM0l;;lKWMMMMMMNd;;:kWMMMMMMMMMMXXMMMMMMMMMMKo;;;;;;;;c0WMMMMMMMMMWWMMMMMMMMMMNx;;;;;;oKMMMMMMMMMWOc;;;;;:kWMMMMMMMMMMMMMMNd;;;;;;;dNMMMMMMMMMMMMMMMMMMMMWOcoXMMMMMMMMMMMMMMMMMMMMNx;;;;;
+;;;;;xNMMMMMMMMMM0l;;:OWMMMMMWKl;;:kWMMMMMMMMMMWWMMMMMMMMMWOc;;;;;;;;:kWMMMMMMMMMMMMMMMMMMMMMNx;;;;;;:kWMMMMMMMMMXd;;;;;;dXMMMMMMMMMMMMMWKl;;;;;;;dNMMMMMMMMMMMMMMMMMMMMWOcoXMMMMMMMMMMMMMMMMMMMMNx;;;;;
+;;;;;xNMMMMMMMMMM0l;;;dXMMMMMWk:;;:kWMMMMMMMMMMMMMMMMMMMMMWk:;;;;;;;;;dNMMMMMMMMMMMMMMMMMMMMMNx;;;;;;;lKWMMMMMMMMW0l;;;;;lKMMMMMMMMMMMMMWO:;;;;;;;dNMMMMMMMMMMMMMMMMMMMMWOcoXMMMMMMMMMMMMMMMMMMMMNx;;;;;
+;;;;;xNMMMMMMMMMW0c;;;lKWMMMMXd;;;:kWMMMMMMMMMMMMMMMMMMMMWXd;;;;;;;;;;oKWMMMMMMMMMMMMMMMMMMMWNx;;;;;;;:xNMMMMMMMMWNx:;;;;:kWMMMMMMMMMMMWNd;;;;;;;;dNMMMMMMMMMMMMMMMMMMMMWOcoXMMMMMMMMMMMMMMMMMMMMNx;;;;;
+;;;;;lxkkkkkkkkkkd:;;;:dkkkkkxc;;;:okkkkkkkkkkkkkkkkkkkkkkxc;;;;;;;;;;:dkkkkkkkkkkkkkkkOOkOOkxl;;;;;;;;cxkkkkkkkOkkd:;;;;;lkkOOOOOkkkkkkxc;;;;;;;;lxkkkkkkkkkkkkkkkkkkkkkd:cxkkkkkkkkkkkkkkkkkkkkxl;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ".each_char do |c|
-            sleep 0.001
+            sleep 0.0001
             print c
         end
         welcome_page
@@ -120,15 +146,16 @@ class Cli
         puts ""
         puts "Character Name:" 
         puts "#{character.name}"
-        puts ""
+        puts "" 
         puts "Character Description:"
         puts "#{character.description}"
         puts ""
         puts "Character ID (internal Marvel number):"
         puts "#{character.id}"
         puts ""
-        puts "Character Thumbnail (link):"
-        puts "#{character.thumbnail}"
+        puts "Character Thumbnail (opened in default browser):"
+        # puts "#{character.thumbnail}"
+        system "open #{character.thumbnail}"
         puts ""
         character_details_options
     end
@@ -153,6 +180,7 @@ class Cli
             goodbye
         elsif input != 'list' || input != 'main' || input != 'exit' # had to add "input !=" each time to avoid the string literal warning
             invalid_input
+            character_details_options
         end
     end
 
@@ -165,17 +193,16 @@ class Cli
     end
     
     def stan_lee_quote
+        puts "-----------------------------------------------"
         puts ""
         puts ["'Face front, true believers!'", 
-        "'With great power comes great responsibility.'", 
-        "'Whosoever holds this hammer, if he be worthy, shall possess the power of Thor.'", 
-        "'Excelsior!", 
-        "'There is only one who is all powerful, and his greatest weapon is love.'", 
         "'With great power, comes great responsibility.'", 
+        "'Whosoever holds this hammer, if he be worthy, shall possess the power of Thor.'", 
+        "'Excelsior!'", 
+        "'There is only one who is all powerful, and his greatest weapon is love.'", 
         "'That person who helps others simply because it should or must be done, and because it is the right thing to do, is indeed without a doubt, a real superhero.'"].to_a.sample + " - Stan Lee"
             main_menu
-    end
-
+    end    
         #------Application end
 
     def goodbye
@@ -305,7 +332,7 @@ ddoooooooool:,..  .:oOKXKK000Oc  .;xo. ckol:,'''''''.. ':,. ....'''....  ...   .
 oooooool:,..  .,lxKXXK00OO0Oo,.'. .,;..lxlc;,''''''.   .,do:'.  ..''.... ...   ..'....          ..      .,:ll,..oO00000o.    c0KKKKKXXXX0x0O,  'xOOdd0d'..    ;o. .'''''''''''''''''.  .'...............
 ooll:,..  .'cd0XXKK00OO0Odc'.,okl.    .odl:,''''''.  .'. ;ddl:'.   ...... .    ..''.......            ..:odo:.,x0000KKo.    :OKKKKXXXXXKkOKc  .d0OodKd',,.   .dc ....................  .................
 :,..   .:oOKXKK000000Oxl,..;okkxxo,   'ooc;,'''''.  .''. .:dol:,..   ....   .. ..''...........        .:oddc.;k000KKKo.    ,kKKKKXXXXXXOkKd. .dOOddKd',;,.   cx. .....................  ................
-    ...;OXXK0000000Oxl,..,cdkxdddooo'  .cc;,''''.   .''''. .colc;,'...  ...  ... .''...............   .:oddo,;kKKKKKKo.    .x0KKKXXXXXX0x0O' .dO0xdKd,::;;...,kc .......................  ...............
+.  ...;OXXK0000000Oxl,..,cdkxdddooo'  .cc;,''''.   .''''. .colc;,'...  ...  ... .''...............   .:oddo,;kKKKKKKo.    .x0KKKXXXXXX0x0O' .dO0xdKd,::;;...,kc .......................  ...............
 ;lx0O;.'dO000OOOxc,..':oxxxddooooo:.   .,'''''.  ..''''''. .col:,''....      .. ..................   .lddd;;kKKKKKKo.    .l00KKKXXXXXKxO0; .dO0kxKx':o:;:,,:xd. .......................   ..............
 XXK00Oc..:kOko:'..':oxxdddoooolll;. .'. .'''..  .''''''''.. .:lc;,'.....          ..                 'oxxc;xKKKXXKo.     :O00KKXXXXXXkk0: 'dO0OkKk;;odc:ccoKO' .........................   .............
 0000000o. ',...,coxxddoooollllcc,. ..'.  .'.   .''''''''''.  .;c:,''..... ... ..  ...............    'dko:xKKXXXXo.     ,k00KKKXXXXXOkOc.'xO000K0:coodlldx0Xc  .........................   .............
@@ -326,12 +353,7 @@ llccccc:::;;;,,,,'.  .'''''''''''..  .'''''''''''''''''''''''...       .........
 ''''''''''''..........  .....         ........'''''''''''''''''.   ....                                         .,...     ,k00KKKXXXXXNk'cXNXXXXXXXXNNNNNo   ...................................   .....
 ''''''''''''''''''''. ..............            ......''''''''.   .'....                                        ..       .d00KKKXXXXXXXx,oXXXXXXXXXXXXXNXc   ...................................   .....
 '''''''''''''''''''....'''''.............             ...''''..   .'....                                                 c00KKKXXXXXXXx'lXNXXXXXXXXXXXXNK;   ...................................   ....."
-
 exit
     end
 
-    def clear
-        self.clear
-    end
-    
 end

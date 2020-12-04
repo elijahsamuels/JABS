@@ -13,7 +13,7 @@ class Characters
     end
 
     def self.all
-        @@all.first(50)
+        @@all.first(100)
     end
     
 end
