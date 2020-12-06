@@ -37,19 +37,10 @@ class Api
             description = if character["description"] == ""
                 "Oh, my stars and garters! It looks like Stan Lee didn't get around to providing anything here..."
             else character["description"]
-                end
+                    end
             thumbnail = character['thumbnail']['path'] + '.' + character['thumbnail']['extension']
             Characters.new(id, name, description, thumbnail)
-            
             end        
-    end
-    
-    #   Juan recommended to move this to the CLI. It's not really part of the user interface though
-    #   puts a list of the character names
-    def self.all_character_data_list_of_names
-        Characters.all.each.with_index(1) do |i, index|
-            puts "#{index}. #{i.name}"
-        end
     end
         
 end

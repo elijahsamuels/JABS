@@ -13,7 +13,6 @@ class Cli
     #------ Weclome Banner
     def welcome_page_banner
         system "printf '\e[8;200;200t'"
-
 "
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -137,7 +136,7 @@ class Cli
         clear
     end
 
-    #------Character Description (still page 3)
+    #------Character Description ( page 3)
 
     def print_character_details(character)
         puts "-----------------------------------------------"
@@ -154,12 +153,13 @@ class Cli
         puts "#{character.id}"
         puts ""
         puts "Character Thumbnail (opened in default browser):"
-        # puts "#{character.thumbnail}"
+        # puts "#{character.thumbnail}" # use this line if you want to just puts a URL for the image
         system "open #{character.thumbnail}"
         puts ""
         character_details_options
     end
-
+    
+    #------Character Description (still page 3)
     def character_details_options
         puts "-----------------------------------------------"
         puts ""
@@ -190,6 +190,7 @@ class Cli
         puts "-----------------------------------------------"
         puts ""
         puts "Whoops. Let's try that again!" # can I trigger an audio file? 
+
     end
     
     def stan_lee_quote
@@ -203,6 +204,14 @@ class Cli
         "'That person who helps others simply because it should or must be done, and because it is the right thing to do, is indeed without a doubt, a real superhero.'"].to_a.sample + " - Stan Lee"
             main_menu
     end    
+
+    #------puts a list of the character names
+    def Api.all_character_data_list_of_names
+        Characters.all.each.with_index(1) do |i, index|
+            puts "#{index}. #{i.name}"
+        end
+    end
+
         #------Application end
 
     def goodbye
