@@ -178,7 +178,7 @@ class Cli
             main_menu
         elsif input == 'exit'
             goodbye
-        elsif input != 'list' || input != 'main' || input != 'exit' # had to add "input !=" each time to avoid the string literal warning
+        elsif input != 'list' || input != 'main' || input != 'exit'
             invalid_input
             character_details_options
         end
@@ -189,7 +189,7 @@ class Cli
     def invalid_input
         puts "-----------------------------------------------"
         puts ""
-        puts "Whoops. Let's try that again!" # can I trigger an audio file? 
+        puts "Whoops. Let's try that again!"
 
     end
     
